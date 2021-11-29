@@ -21,6 +21,7 @@
  */
 package no.nordicsemi.android.nrfbeacon.beacon;
 
+import java.io.File;
 import java.util.List;
 
 import net.dinglisch.android.tasker.TaskerIntent;
@@ -37,6 +38,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -120,7 +124,22 @@ public class BeaconsDetailsActivity extends AppCompatActivity implements Downloa
 
 		if (resultCode == Activity.RESULT_OK && data != null) {
 			Uri selectedImage = data.getData();
-			mImageChange.setImageURI(selectedImage);
+			File file = new File(getRealPathFromURI(selectedImage));
+
+			if (file.exists()) {
+				mImageChange.setImageURI(selectedImage);
+			}
+		}
+	}
+
+	private String getRealPathFromURI(Uri contentURI) {
+		Cursor cursor = getContentResolver().query(contentURI, null, null, null, null);
+		if (cursor == null) { // Source is Dropbox or other similar local file path
+			return contentURI.getPath();
+		} else {
+			cursor.moveToFirst();
+			int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+			return cursor.getString(idx);
 		}
 	}
 
@@ -235,11 +254,6 @@ public class BeaconsDetailsActivity extends AppCompatActivity implements Downloa
 			cursor.close();
 		}
 	}
-
-//	@Override
-//	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//		super.onActivityResult(requestCode, resultCode, data);
-//	}
 
 	@Override
 	public void onBackPressed() {

@@ -228,8 +228,7 @@
 					<ImageView
 						android:id="@+id/imageChange"
 						android:layout_width="25dp"
-						android:layout_height="25dp"
-						android:src="@drawable/ic_action_small"/>
+						android:layout_height="25dp"/>
 				</TableRow>
 
 				<TableRow
@@ -258,6 +257,7 @@
 						android:drawableRight="@drawable/ic_action_small"
 						android:freezesText="true"
 						android:gravity="right|center_vertical"/>
+
 				</TableRow>
 
 				<TableRow
