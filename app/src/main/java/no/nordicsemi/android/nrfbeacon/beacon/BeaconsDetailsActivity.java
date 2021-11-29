@@ -37,7 +37,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
@@ -51,6 +53,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class BeaconsDetailsActivity extends AppCompatActivity implements DownloadTaskerFragment.DownloadCanceledListener {
@@ -68,6 +71,7 @@ public class BeaconsDetailsActivity extends AppCompatActivity implements Downloa
 	private TextView mMinorView;
 	private TextView mEventView;
 	private TextView mActionView;
+	private ImageView mImageChange;
 	private View mActionParamContainer;
 	private TextView mActionParamTitleView;
 	private TextView mActionParamView;
@@ -113,6 +117,11 @@ public class BeaconsDetailsActivity extends AppCompatActivity implements Downloa
 			mDatabaseHelper.updateRegionActionParam(id, taskName);
 			updateActionParam(BeaconContract.ACTION_TASKER);
 		}
+
+		if (resultCode == Activity.RESULT_OK && data != null) {
+			Uri selectedImage = data.getData();
+			mImageChange.setImageURI(selectedImage);
+		}
 	}
 
 	private void createView(final long id) {
@@ -129,6 +138,8 @@ public class BeaconsDetailsActivity extends AppCompatActivity implements Downloa
 		mNameView = (EditText) findViewById(R.id.name);
 		mEventView = (TextView) findViewById(R.id.event);
 		mActionView = (TextView) findViewById(R.id.action);
+
+		mImageChange = (ImageView) findViewById(R.id.imageChange);
 		mActionParamContainer = findViewById(R.id.action_param_container);
 		mActionParamTitleView = (TextView) findViewById(R.id.action_param_title);
 		mActionParamView = (TextView) findViewById(R.id.action_param);
@@ -176,6 +187,14 @@ public class BeaconsDetailsActivity extends AppCompatActivity implements Downloa
 			}
 		});
 
+		findViewById(R.id.image_container).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+				startActivityForResult(intent, 3);
+			}
+		});
+
 		findViewById(R.id.action_param_container).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(final View v) {
@@ -216,6 +235,11 @@ public class BeaconsDetailsActivity extends AppCompatActivity implements Downloa
 			cursor.close();
 		}
 	}
+
+//	@Override
+//	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//		super.onActivityResult(requestCode, resultCode, data);
+//	}
 
 	@Override
 	public void onBackPressed() {
