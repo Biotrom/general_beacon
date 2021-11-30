@@ -26,17 +26,6 @@
 
     <!-- The size of text below must be fixed, therefore dp are used instead of sp -->
 
-    <no.nordicsemi.android.nrfbeacon.widget.TrebuchetBoldTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/update_title_left_margin"
-        android:rotation="270"
-        android:text="@string/beacon_update"
-        android:textColor="@color/darkGray"
-        android:textSize="32dp"
-        android:textStyle="bold" />
-
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
@@ -51,7 +40,7 @@
         <no.nordicsemi.android.nrfbeacon.widget.TrebuchetBoldTextView
             style="@style/Widget.ListTitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="@string/update_title" />
 
         <LinearLayout
@@ -180,7 +169,7 @@
             android:id="@+id/advanced_title"
             style="@style/Widget.ListTitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="@string/update_advanced_title" />
 
         <LinearLayout

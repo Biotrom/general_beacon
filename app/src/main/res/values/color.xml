@@ -21,14 +21,14 @@
   ~ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   -->
 <resources>
-    <color name="actionBarColor">#496BC1</color>
-    <color name="actionBarColorDark">#133FAE</color>
+    <color name="actionBarColor">#222016</color>
+    <color name="actionBarColorDark">#666</color>
     <color name="backgroundColor">#E6E7E8</color>
-    <color name="headerBackgroundColor">#5673CA</color>
+    <color name="headerBackgroundColor">#000</color>
     <color name="headerBackgroundColorDisabled">#6A6A6A</color>
-    <color name="headerTextColor">#0A133E</color>
+    <color name="headerTextColor">#FFF</color>
     <color name="dividerColor">#BBBDC0</color>
-    <color name="fab_normal">#141D71</color>
+    <color name="fab_normal">#000</color>
     <color name="tabSelectedTextColor">@android:color/white</color>
     <color name="tabTextColor">#AAFFFFFF</color>
     <color name="tabIndicatorColor">@android:color/white</color>

@@ -26,39 +26,29 @@
 
 	<include
 		android:id="@+id/toolbar"
-		layout="@layout/toolbar"/>
+		layout="@layout/toolbar" />
 
 	<!-- The size of text below must be fixed, therefore dp are used instead of sp -->
-
-	<no.nordicsemi.android.nrfbeacon.widget.TrebuchetBoldTextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_centerVertical="true"
-		android:layout_marginLeft="@dimen/config_title_left_margin"
-		android:rotation="270"
-		android:text="@string/beacon_config"
-		android:textColor="@color/darkGray"
-		android:textSize="32dp"
-		android:textStyle="bold"/>
 
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_below="@+id/toolbar"
+		android:layout_marginTop="0dp"
 		android:orientation="vertical">
 
 		<EditText
 			android:id="@+id/name"
 			style="@style/Widget.EditText"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
+			android:layout_height="40dp"
 			android:layout_marginLeft="@dimen/feature_horizontal_margin"
-			android:layout_marginRight="@dimen/feature_horizontal_margin"
 			android:layout_marginTop="@dimen/feature_vertical_margin_top"
+			android:layout_marginRight="@dimen/feature_horizontal_margin"
 			android:hint="@string/settings_name_hint"
 			android:imeOptions="flagNoExtractUi|actionDone"
 			android:padding="3dp"
-			android:singleLine="true"/>
+			android:singleLine="true" />
 
 		<!-- Identity section -->
 
@@ -67,15 +57,15 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="@dimen/feature_horizontal_margin"
-			android:layout_marginRight="@dimen/feature_horizontal_margin"
 			android:layout_marginTop="10dp"
+			android:layout_marginRight="@dimen/feature_horizontal_margin"
 			android:orientation="vertical">
 
 			<no.nordicsemi.android.nrfbeacon.widget.TrebuchetBoldTextView
 				style="@style/Widget.ListTitle"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:text="@string/settings_identity_title"/>
+				android:layout_height="40dp"
+				android:text="@string/settings_identity_title" />
 
 			<TableLayout
 				android:layout_width="match_parent"
@@ -92,7 +82,7 @@
 					<no.nordicsemi.android.nrfbeacon.widget.TrebuchetTextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="@string/settings_uuid"/>
+						android:text="@string/settings_uuid" />
 
 					<TextView
 						android:id="@+id/uuid"
@@ -101,7 +91,7 @@
 						android:layout_weight="1"
 						android:freezesText="true"
 						android:gravity="right"
-						android:textSize="@dimen/uuid_textSize"/>
+						android:textSize="@dimen/uuid_textSize" />
 				</TableRow>
 
 				<TableRow
@@ -113,7 +103,7 @@
 					<no.nordicsemi.android.nrfbeacon.widget.TrebuchetTextView
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
-						android:text="@string/settings_major"/>
+						android:text="@string/settings_major" />
 
 					<no.nordicsemi.android.nrfbeacon.widget.TrebuchetBoldTextView
 						android:id="@+id/major"
@@ -123,7 +113,7 @@
 						android:layout_weight="1"
 						android:freezesText="true"
 						android:gravity="right"
-						android:textSize="26sp"/>
+						android:textSize="26sp" />
 				</TableRow>
 
 				<TableRow
@@ -135,7 +125,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:gravity="center_vertical"
-						android:text="@string/settings_minor"/>
+						android:text="@string/settings_minor" />
 
 					<no.nordicsemi.android.nrfbeacon.widget.TrebuchetBoldTextView
 						android:id="@+id/minor"
@@ -145,7 +135,7 @@
 						android:layout_weight="1"
 						android:freezesText="true"
 						android:gravity="right"
-						android:textSize="26sp"/>
+						android:textSize="26sp" />
 				</TableRow>
 			</TableLayout>
 		</LinearLayout>
@@ -157,15 +147,15 @@
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="@dimen/feature_horizontal_margin"
-			android:layout_marginRight="@dimen/feature_horizontal_margin"
 			android:layout_marginTop="10dp"
+			android:layout_marginRight="@dimen/feature_horizontal_margin"
 			android:orientation="vertical">
 
 			<no.nordicsemi.android.nrfbeacon.widget.TrebuchetBoldTextView
 				style="@style/Widget.ListTitle"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:text="@string/settings_notify_title"/>
+				android:layout_height="40dp"
+				android:text="@string/settings_notify_title" />
 
 			<TableLayout
 				android:layout_width="match_parent"
@@ -185,7 +175,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:gravity="center_vertical"
-						android:text="@string/settings_event"/>
+						android:text="@string/settings_event" />
 
 					<TextView
 						android:id="@+id/event"
@@ -193,10 +183,10 @@
 						android:layout_height="wrap_content"
 						android:layout_marginLeft="5dp"
 						android:layout_weight="1"
-						android:drawablePadding="6dp"
 						android:drawableRight="@drawable/ic_event_small"
+						android:drawablePadding="6dp"
 						android:freezesText="true"
-						android:gravity="right|center_vertical"/>
+						android:gravity="right|center_vertical" />
 				</TableRow>
 
 				<TableRow
@@ -213,7 +203,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:gravity="center_vertical"
-						android:text="IMAGE"/>
+						android:text="IMAGE" />
 
 					<TextView
 						android:id="@+id/image"
@@ -223,12 +213,12 @@
 						android:layout_weight="1"
 						android:drawablePadding="6dp"
 						android:freezesText="true"
-						android:gravity="right|center_vertical"/>
+						android:gravity="right|center_vertical" />
 
 					<ImageView
 						android:id="@+id/imageChange"
 						android:layout_width="25dp"
-						android:layout_height="25dp"/>
+						android:layout_height="25dp" />
 				</TableRow>
 
 				<TableRow
@@ -245,7 +235,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:gravity="center_vertical"
-						android:text="@string/settings_action"/>
+						android:text="@string/settings_action" />
 
 					<TextView
 						android:id="@+id/action"
@@ -253,10 +243,10 @@
 						android:layout_height="wrap_content"
 						android:layout_marginLeft="5dp"
 						android:layout_weight="1"
-						android:drawablePadding="6dp"
 						android:drawableRight="@drawable/ic_action_small"
+						android:drawablePadding="6dp"
 						android:freezesText="true"
-						android:gravity="right|center_vertical"/>
+						android:gravity="right|center_vertical" />
 
 				</TableRow>
 
@@ -275,7 +265,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:gravity="center_vertical"
-						android:text="@string/settings_action_param_url"/>
+						android:text="@string/settings_action_param_url" />
 
 					<TextView
 						android:id="@+id/action_param"
@@ -286,7 +276,7 @@
 						android:ellipsize="end"
 						android:freezesText="true"
 						android:gravity="right"
-						android:singleLine="true"/>
+						android:singleLine="true" />
 				</TableRow>
 			</TableLayout>
 		</LinearLayout>
@@ -297,17 +287,17 @@
 			style="@style/Widget.List"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_marginBottom="4dp"
 			android:layout_marginLeft="@dimen/feature_horizontal_margin"
-			android:layout_marginRight="@dimen/feature_horizontal_margin"
 			android:layout_marginTop="10dp"
+			android:layout_marginRight="@dimen/feature_horizontal_margin"
+			android:layout_marginBottom="4dp"
 			android:orientation="vertical">
 
 			<no.nordicsemi.android.nrfbeacon.widget.TrebuchetBoldTextView
 				style="@style/Widget.ListTitle"
 				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:text="@string/settings_status_title"/>
+				android:layout_height="40dp"
+				android:text="@string/settings_status_title" />
 
 			<android.support.v7.widget.SwitchCompat
 				android:id="@+id/enable"
@@ -316,7 +306,7 @@
 				android:checked="true"
 				android:padding="@dimen/feature_section_padding"
 				android:text="@string/settings_enabled"
-				android:textColor="?android:attr/textColorTertiary"/>
+				android:textColor="?android:attr/textColorTertiary" />
 		</LinearLayout>
 	</LinearLayout>
 
