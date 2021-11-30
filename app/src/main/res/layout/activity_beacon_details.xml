@@ -47,7 +47,7 @@
 			android:layout_marginRight="@dimen/feature_horizontal_margin"
 			android:hint="@string/settings_name_hint"
 			android:imeOptions="flagNoExtractUi|actionDone"
-			android:padding="3dp"
+			android:padding="9dp"
 			android:singleLine="true" />
 
 		<!-- Identity section -->
